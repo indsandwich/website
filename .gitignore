@@ -1,0 +1,15 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+yarn.lock
+
+# Compiled files, created by Jekyll #
+######################
+.sass-cache
+_site
+_data/old/
+/.jekyll-metadata
+node_modules
+_node/node_modules
+npm-debug.log

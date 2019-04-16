@@ -1,0 +1,148 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+{% comment %}
+  https://support.google.com/webmasters/answer/156184?hl=en
+
+  ### TODO:
+
+  * Consider adding alternate language elements…
+  https://support.google.com/webmasters/answer/2620865?hl=en
+  <xhtml:link rel="alternate" hreflang="es" href="https://foodoasis.la/español/" />
+
+  * Consider adding the <changefreq> and <priority> elements.
+  <changefreq>weekly</changefreq>
+  <priority>1.0</priority>
+
+{% endcomment %}
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+{% comment %}
+######### Pages #########
+{% endcomment %}
+  <url>
+    <loc>https://foodoasis.la/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://foodoasis.la/es/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://foodoasis.la/"
+                />
+  </url>
+  <url>
+    <loc>https://foodoasis.la/add/</loc>
+  </url>
+  <url>
+    <loc>https://foodoasis.la/organizations/</loc>
+  </url>
+  <url>
+    <loc>https://foodoasis.la/resources/</loc>
+  </url>
+  <url>
+    <loc>https://foodoasis.la/about/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://foodoasis.la/es/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://foodoasis.la/about/"
+                />  
+  </url>
+  <url>
+    <loc>https://foodoasis.la/team/</loc>
+  </url>
+  <url>
+    <loc>https://foodoasis.la/faqs/</loc>
+  </url>
+
+{% comment %}
+######### Posts #########
+{% endcomment %}
+  <url>
+    <loc>https://foodoasis.la/news/</loc>
+  </url>
+{% for post in site.posts %}
+  <url>
+    <loc>https://foodoasis.la{{ post.url }}</loc>
+  </url>
+{% endfor %}
+
+{% comment %}
+######### Locations #########
+{% endcomment %}
+  <url>
+    <loc>https://foodoasis.la/locations/</loc>
+  </url>
+  <url>
+    <loc>https://foodoasis.la/community-garden/</loc>
+  </url>
+  <url>
+    <loc>https://foodoasis.la/farmers-market/</loc>
+  </url>
+  <url>
+    <loc>https://foodoasis.la/food-pantry/</loc>
+  </url>
+  <url>
+    <loc>https://foodoasis.la/summer-lunch/</loc>
+  </url>
+  <url>
+    <loc>https://foodoasis.la/supermarket/</loc>
+  </url>
+
+{% assign data_collection = site.collections | where: "label", "locations" | first %}
+{% assign data_list = data_collection.docs %}
+{% for location in data_list %}
+  <url>
+    <loc>https://foodoasis.la{{ location.uri }}</loc>
+  </url>
+{% endfor %}
+
+{% assign data_collection = site.collections | where: "label", "community-garden" | first %}
+{% assign data_list = data_collection.docs %}
+{% for location in data_list %}
+  <url>
+    <loc>https://foodoasis.la{{ location.uri }}</loc>
+  </url>
+{% endfor %}
+
+{% assign data_collection = site.collections | where: "label", "farmers-market" | first %}
+{% assign data_list = data_collection.docs %}
+{% for location in data_list %}
+  <url>
+    <loc>https://foodoasis.la{{ location.uri }}</loc>
+  </url>
+{% endfor %}
+
+{% assign data_collection = site.collections | where: "label", "food-pantry" | first %}
+{% assign data_list = data_collection.docs %}
+{% for location in data_list %}
+  <url>
+    <loc>https://foodoasis.la{{ location.uri }}</loc>
+  </url>
+{% endfor %}
+
+{% assign data_collection = site.collections | where: "label", "summer-lunch" | first %}
+{% assign data_list = data_collection.docs %}
+{% for location in data_list %}
+  <url>
+    <loc>https://foodoasis.la{{ location.uri }}</loc>
+  </url>
+{% endfor %}
+
+{% assign data_collection = site.collections | where: "label", "supermarket" | first %}
+{% assign data_list = data_collection.docs %}
+{% for location in data_list %}
+  <url>
+    <loc>https://foodoasis.la{{ location.uri }}</loc>
+  </url>
+{% endfor %}
+
+</urlset>

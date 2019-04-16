@@ -1,0 +1,23 @@
+---
+layout: default
+
+title: News, Food Oasis Los Angeles
+---
+<h1>News</h1>
+
+{% for post in site.posts %}
+<article>
+
+	<header>
+		<h1>{{ post.title }}</h1>
+		<p>
+			<a href="{{ post.url | prepend: site.baseurl }}">
+				<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+			</a>
+		</p>
+	</header>
+
+	{{ post.content | markdownify }}
+
+</article>
+{% endfor %}

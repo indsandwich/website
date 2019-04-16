@@ -1,0 +1,263 @@
+---
+layout: default
+title: Filters, Food Oasis Los Angeles
+canonical_url: /filters/
+include_header: false
+include_footer: false
+---
+
+<form action="/locations/" method="get" id="search-form">
+	<header class="header">
+		<div class="filter-nav">
+			<h1>Filters</h1>
+
+			<p><a href="/locations/" onclick="history.back();">Cancel</a></p>
+			<p><button type="submit">Done</button></p>
+		</div>
+	</header>
+
+	{% comment %}
+
+	TODO: Add a filter for open hours
+
+	<fieldset>
+		<legend>Hours</legend>
+
+		<p>
+			<label>
+				Open Now
+				<input type="checkbox" disabled="disabled" />
+			</label> 
+		</p>
+
+		<h3>Open At</h3>
+		<select disabled="disabled">
+			<option>Anytime</option>
+			<option>5am – 6am</option>
+			<option>6am – 7am</option>
+			<option>7am – 8am</option>
+			<option>8am – 9am</option>
+			<option>10am – 11am</option>
+			<option>11am – noon</option>
+			<option>noon – 1pm</option>
+			<option>1pm – 2pm</option>
+			<option>2pm – 3pm</option>
+			<option>4pm – 5pm</option>
+			<option>5pm – 6pm</option>
+			<option>6pm – 7pm</option>
+			<option>7pm – 8pm</option>
+			<option>8pm – 9pm</option>
+			<option>9pm – 10pm</option>
+		</select>
+		<!-- TBD:
+		<input type="text" value="2pm" />
+		-->
+
+		<select disabled="disabled">
+			<option>Any Day</option>
+			<option>Sunday</option>
+			<option>Monday</option>
+			<option>Tuesday</option>
+			<option>Wednesday</option>
+			<option>Thursday</option>
+			<option>Friday</option>
+			<option>Saturday</option>
+		</select>
+
+		<!--
+		TODO: Make a button that looks like a checkbox, that resets the “anytime” and “any day” select elements.
+		<input type="checkbox" />
+		-->
+	</fieldset>
+	{% endcomment %}
+
+	<fieldset>
+		<legend>Hours</legend>
+		<!--
+		 <div style="display:flex; flex-direction: row; justify-content: center">
+				Start<input type="time" name="open_start">
+				End<input type="time" name="open_end">
+		</div> 
+		<div style="text-align:center">
+			<select name="open_days" multiple>
+				<option value="Sunday">Sunday</option>
+				<option value="Monday">Monday</option>
+				<option value="Tuesday">Tuesday</option>
+				<option value="Wednesday">Wednesday</option>
+				<option value="Thursday">Thursday</option>
+				<option value="Friday">Friday</option>
+				<option value="Saturday">Saturday</option>
+			</select>
+		</div>
+		-->
+		<ul>
+			<li>
+				<label>
+					<span>Only show locations that are open</span>
+					<input type="checkbox" name="open" value="1" />
+					<span class="pseudo-checkbox"></span> 
+				</label>
+			</li>
+			<li>
+				<label>
+					<span>Open at</span>
+					<select name="open_start">
+						<option value="">the current time</option>
+						<option value="01:00 AM">1:00 a.m.</option>
+						<option value="02:00 AM">2:00 a.m.</option>
+						<option value="03:00 AM">3:00 a.m.</option>
+						<option value="04:00 AM">4:00 a.m.</option>
+						<option value="05:00 AM">5:00 a.m.</option>
+						<option value="06:00 AM">6:00 a.m.</option>
+						<option value="07:00 AM">7:00 a.m.</option>
+						<option value="08:00 AM">8:00 a.m.</option>
+						<option value="09:00 AM">9:00 a.m.</option>
+						<option value="10:00 AM">10:00 a.m.</option>
+						<option value="11:00 AM">11:00 a.m.</option>
+						<option value="12:00 PM">noon</option>
+						<option value="01:00 PM">1:00 p.m.</option>
+						<option value="02:00 PM">2:00 p.m.</option>
+						<option value="03:00 PM">3:00 p.m.</option>
+						<option value="04:00 PM">4:00 p.m.</option>
+						<option value="05:00 PM">5:00 p.m.</option>
+						<option value="06:00 PM">6:00 p.m.</option>
+						<option value="07:00 PM">7:00 p.m.</option>
+						<option value="08:00 PM">8:00 p.m.</option>
+						<option value="09:00 PM">9:00 p.m.</option>
+						<option value="10:00 PM">10:00 p.m.</option>
+						<option value="11:00 PM">11:00 p.m.</option>
+						<option value="00:00 AM">midnight</option>
+					</select>
+				</label>
+      </li>
+      <li>
+        Open Days 
+        <li>
+          <label>
+              <span>Open on day</span>
+              <select name="open_days">
+                  <option>any day</option>
+                  <option value="sun">Sunday</option>
+                  <option value="mon">Monday</option>
+                  <option value="tue">Tuesday</option>
+                  <option value="wed">Wednesday</option>
+                  <option value="thu">Thursday</option>
+                  <option value="fri">Friday</option>
+                  <option value="sat">Saturday</option>
+              </select>
+          </label>
+      </li>
+      </li>
+		</ul>
+	</fieldset>
+
+	<fieldset>
+		<legend>Types</legend>
+		<ul>
+			<li class='listHeader' style='background-color: rgb(249, 192, 88); margin-top: -19px;'>    
+				Free
+			</li>
+			<li>
+				<label>
+					<img src="/assets/images/home/food-pantry.svg" width="100" alt="" />
+					<span class="classification" style="color: rgb(249, 192, 88); /* @canteloupe */">Free</span><br />
+					<span class="option">Food Pantries</span>
+					<input type="checkbox" data-name="type_option" value="food-pantry" checked="checked" />
+					<span class="pseudo-checkbox"></span>
+				</label>
+			</li>
+			<li>
+				<label>
+					<img src="/assets/images/home/orchard.svg" width="100" alt="" />
+					<span class="classification" style="color: rgb(249, 192, 88); /* @canteloupe */">Free</span><br />
+					<span class="option">Orchards</span>
+					<input type="checkbox" data-name="type_option" value="orchard" checked="checked" />
+					<span class="pseudo-checkbox"></span>
+				</label>
+			</li>
+			<li>
+				<label>
+					<img src="/assets/images/home/summer-lunch.svg" width="100" alt="" />
+					<span class="classification" style="color: rgb(249, 192, 88); /* @canteloupe */">Free</span><br />
+					<span class="option">Summer Lunch for Kids</span>
+					<input type="checkbox" data-name="type_option" value="summer-lunch" checked="checked" />
+					<span class="pseudo-checkbox"></span>
+				</label>
+			</li>
+			<li class='listHeader' style='background-color: rgb(144, 194, 70);'>
+				Grow
+			</li>
+			<li>
+				<label>
+					<img src="/assets/images/home/community-garden.svg" width="100" alt="" />
+					<span class="classification" style="color: rgb(144, 194, 70); /* @lime */">Grow</span><br />
+					<span class="option">Community Gardens</span>
+					<input type="checkbox" data-name="type_option" value="community-garden" checked="checked" />
+					<span class="pseudo-checkbox"></span>
+				</label>
+			</li>
+			<li class='listHeader' style='background-color: rgb(241, 95, 91);'>
+				Buy
+			</li>
+			<li>
+				<label>
+					<img src="/assets/images/home/farmers-market.svg" width="100" alt="" />
+					<span class="classification" style="color: rgb(241, 95, 91); /* @strawberry */">Buy</span><br />
+					<span class="option">Farmers Markets</span>
+					<input type="checkbox" data-name="type_option" value="farmers-market" checked="checked" />
+					<span class="pseudo-checkbox"></span>
+				</label>
+			</li>
+			<li>
+				<label>
+					<img src="/assets/images/home/restaurant.svg" width="100" alt="" />
+					<span class="classification" style="color: rgb(241, 95, 91); /* @strawberry */">Buy</span><br />
+					<span class="option">Restaurants</span>
+					<input type="checkbox" data-name="type_option" value="restaurant" checked="checked" />
+					<span class="pseudo-checkbox"></span>
+				</label>
+			</li>
+			<li>
+				<label>
+					<img src="/assets/images/home/pop-up-market.svg" width="100" alt="" />
+					<span class="classification" style="color: rgb(241, 95, 91); /* @strawberry */">Buy</span><br />
+					<span class="option">Pop Up Markets</span>
+					<input type="checkbox" data-name="type_option" value="pop-up-market" checked="checked" />
+					<span class="pseudo-checkbox"></span>
+				</label>
+			</li>
+			<li>
+				<label>
+					<img src="/assets/images/home/supermarket.svg" width="100" alt="" />
+					<span class="classification" style="color: rgb(241, 95, 91); /* @strawberry */">Buy</span><br />
+					<span class="option">Supermarkets</span>
+					<input type="checkbox" data-name="type_option" value="supermarket" checked="checked" />
+					<span class="pseudo-checkbox"></span>
+				</label>
+			</li>
+		</ul>
+	</fieldset>
+
+	<fieldset>
+		<legend>Research Data</legend>
+		<ul>
+			<li>
+				<label>
+					<span>Food Deserts</span>
+					<input type="checkbox" name="deserts" value="1" checked="checked" />
+					<span class="pseudo-checkbox"></span><br /><br />
+					<i>Food Deserts are low-income areas without easy access to healthy food.</i>
+				</label>
+			</li>
+		</ul>
+	</fieldset>
+
+	<p class="action reset">
+		<button type="reset">Reset</button>
+	</p>
+
+	<input type="hidden" name="address" />
+	<input type="hidden" name="type" />
+</form>
+
+<script src="/assets/js/search.js"></script>
